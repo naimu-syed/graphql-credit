@@ -1,0 +1,18 @@
+type CreditCard {
+    id: ID!
+    cardNumber: String!
+    cardHolderName: String!
+    expirationDate: String!
+    cvv: String!
+}
+
+type Query {
+    allCreditCards: [CreditCard]
+    getCreditCard(id: ID!): CreditCard
+    paginatedCreditCards(page: Int!, size: Int!): [CreditCard]
+}
+
+type Mutation {
+    createCreditCard(cardNumber: String!, cardHolderName: String!, expirationDate: String!, cvv: String!): CreditCard
+    deleteCreditCard(id: ID!): String
+}
