@@ -1,0 +1,48 @@
+
+Fetch Data Query
+Query to fetch all credit cards:
+query {
+    allCreditCards {
+        id
+        cardNumber
+        cardHolderName
+        expirationDate
+        cvv
+    }
+}
+Query to fetch a specific credit card by ID:
+query {
+    getCreditCard(id: "1") {
+        id
+        cardNumber
+        cardHolderName
+        expirationDate
+        cvv
+    }
+}
+Query to fetch paginated credit cards:
+query {
+    paginatedCreditCards(page: 0, size: 10) {
+        id
+        cardNumber
+        cardHolderName
+        expirationDate
+        cvv
+    }
+}
+Insert Data Mutation
+Mutation to insert a new credit card:
+mutation {
+    createCreditCard(
+        cardNumber: "1234567812345678",
+        cardHolderName: "John Doe",
+        expirationDate: "12/25",
+        cvv: "123"
+    ) {
+        id
+        cardNumber
+        cardHolderName
+        expirationDate
+        cvv
+    }
+}
